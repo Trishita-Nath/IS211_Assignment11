@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <br>
+    <br>
+    <br>
+    <title>TODO List Application</title>
+    <style>
+        #itemTable {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+        
+        #itemTable td,
+        #itemTable th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        #itemTable tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        #itemTable tr:hover {
+            background-color: #ddd;
+        }
+        
+        #itemTable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        body {
+            background-image: url("https://www.iwantwallpaper.co.uk/images/graham-brown-graham-brown-kia-plain-taupe-textured-wallpaper-19628-p1077-1577_image.jpg")
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <bold>
+            <h1>TO DO List</h1></bold>
+        <br>
+        <br>
+        <table id="itemTable">
+
+            <tr>
+                <th>Email</th>
+                <th>Task</th>
+                <th>Priority</th>
+                <th>Keep/Delete</th>
+            </tr>
+            <br>
+            <br> {% for task in taskList%}
+            <tr>
+                <td>{{task[0]}}</td>
+                <td>{{task[1]}}</td>
+                <td>{{task[2]}}</td>
+                <td>
+                    <a href=" {{url_for('remove_Item',item_id=loop.index0)}}">Remove</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+    </center>
+
+    <br>
+    <br>
+    <br>
+    <a href=" {{url_for('clear_list')}}">Clear All</a> &nbsp;&nbsp;&nbsp;
+    <a href=" {{url_for('add_itemPage')}}">Add Item</a> {% if error %}
+    <p><font size="5" color="red">Error: {{ error }}</font></p>
+    {% endif %}
+</body>
+</html

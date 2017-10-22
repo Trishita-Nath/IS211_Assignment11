@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>Add Item</title>
+    <style>
+        input[type=submit] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        input[type=text] {
+            width: 25%;
+            padding: 10px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: #3CBC8D;
+            color: black;
+        }
+        
+        select {
+            font-size: 30px;
+            width: 25%;
+            text-align: center;
+        }
+        
+        body {
+            background-image: url("https://www.iwantwallpaper.co.uk/images/graham-brown-graham-brown-kia-plain-taupe-textured-wallpaper-19628-p1077-1577_image.jpg")
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <br>
+        <br>
+        <h1>Add Items Form</h1>
+        <br>
+        <br>
+        <form action="/submit" method="Post">
+
+            Task:
+            <input type="text" name="task" required>
+            <br> Email:
+            <input type="text" name="email" required>
+            <br>
+            <br>Priority :
+            <select name="priority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low" selected>Low</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="Add Item to TODO List">
+
+        </form>
+    </center>
+</body>
+
+</html>
